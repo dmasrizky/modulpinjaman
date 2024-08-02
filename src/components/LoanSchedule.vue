@@ -1,8 +1,21 @@
 <template>
-  <b-container>
-    <h2>Amortization Schedule</h2>
-    <b-table :items="schedule" :fields="fields" striped hover></b-table>
-  </b-container>
+  <b-table :items="schedule" :fields="fields">
+    <template #cell(date)="data">
+      {{ data.value }}
+    </template>
+    <template #cell(totalPayment)="data">
+      {{ data.value }}
+    </template>
+    <template #cell(principalPayment)="data">
+      {{ data.value }}
+    </template>
+    <template #cell(interestPayment)="data">
+      {{ data.value }}
+    </template>
+    <template #cell(remainingPrincipal)="data">
+      {{ data.value }}
+    </template>
+  </b-table>
 </template>
 
 <script>
@@ -12,11 +25,15 @@ export default {
       type: Array,
       required: true,
     },
+    formatNumber: {
+      type: Function,
+      required: true,
+    },
   },
   data() {
     return {
       fields: [
-        { key: "installment", label: "Angsuran ke" },
+        { key: "month", label: "Angsuran ke" },
         { key: "date", label: "Tanggal" },
         { key: "totalPayment", label: "Total Angsuran" },
         { key: "principalPayment", label: "Angsuran Pokok" },
