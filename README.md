@@ -1,24 +1,9 @@
-# loan-app
+# Loan App
 
-## Project setup
-```
-npm install
-```
+This is a loan application built with Vue JS.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## How to Run
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start the app with docker: `docker-compose up --build`
